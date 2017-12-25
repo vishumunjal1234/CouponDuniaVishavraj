@@ -51,14 +51,10 @@ public class HomeActivity extends BaseApp implements HomeView  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         getDeps().inject(this);
         ButterKnife.bind(this);
-
         renderView();
-
         couponDuniaListsToshow = new ArrayList<>();
-
         adapter = new HomeAdapter(getApplicationContext(), couponDuniaListsToshow,
                 new HomeAdapter.OnItemClickListener() {
                     @Override
@@ -69,7 +65,6 @@ public class HomeActivity extends BaseApp implements HomeView  {
                     }
                 });
         list.setAdapter(adapter);
-
         lazyLoadingSetup();
 
 
